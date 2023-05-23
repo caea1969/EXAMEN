@@ -9,8 +9,9 @@ $date = new DateTime();
 $now = $date->format('Y-m-d');
 
 // 9. Generar la sentencia SQL para insertar los valores del id de la orden y la variable now en la tabla orders
-$order = $_GET['id'];
-$sqlQuery = "INSERT INTO orders (name, stock, image)" VALUES ($name, $stock, $image);
+$query = "INSERT INTO orders (userId, date)
+            VALUES ('$id', '$now')";
+$result = $connection->query($query);
 // --
 // 9. Realizar la consulta a la base de datos y guardar su resultado en la variable $result
 $result = $connection->query($sqlQuery);
